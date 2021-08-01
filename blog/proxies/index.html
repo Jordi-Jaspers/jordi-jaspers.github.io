@@ -42,8 +42,8 @@
 
 
 
-<link rel="stylesheet" href="https://jordi-jaspers.github.io/css/main.min.2693524b1f45daa9e86f805fb5a79dbc.css" crossorigin="anonymous" media="screen"
-	integrity="md5-JpNSSx9F2qnob4BftaedvA==">
+<link rel="stylesheet" href="https://jordi-jaspers.github.io/css/main.min.2bd3406fa94a147c25f5b55ad43fc388.css" crossorigin="anonymous" media="screen"
+	integrity="md5-K9NAb6lKFHwl9bVa1D/DiA==">
 
 
 
@@ -187,41 +187,38 @@
 </ul>
 <h1 id="proxy-server">Proxy Server</h1>
 <p><strong>Every web request which is sent from the client to a web server goes through some type of proxy server. A proxy server acts as a gateway between client (you) and the internet and separates end-users from the websites you browse.</strong> It replaces the source IP address of the web request with the proxy server&rsquo;s IP address and then forwards it to the web server. The web server is unaware of the client, it only sees the proxy server.</p>
-<p><img  class="mx-auto my-4"  src="/img/blog/proxies/proxy-example.png" alt="image"
+<p><img  class="mx-auto my-4"  src="/img/blog/proxies/proxy-example.png" alt="Fig 1.1: Proxy Server"
 	>
 
 
 <div class="text-center my-2 font-sans text-md text-grey-800">
-	image
+	Fig 1.1: Proxy Server
 </div>
 </p>
-<p><strong><em>NOTE:</em></strong><br>
-<code>This is not an accurate description rather just an illustration.</code></p>
+<p><strong><em>NOTE:</em></strong>  <strong>This is not an accurate description rather just an illustration.</strong></p>
 <p>Proxy servers serve as a single point of control making it easier to enforce security policies. It also provides caching mechanism which stores the requested web pages on the proxy server to improve performance. If the requested web-page is available in cache memory then instead of forwarding the request to the web-server it will send the cached webpage back to the client. This <strong>saves big companies thousands of dollars</strong> by reducing load on their servers as their website is visited by millions of users every day.</p>
 <h1 id="forward-proxy-server">Forward Proxy Server</h1>
 <p>A forward proxy is generally implemented on the client side and sits in front of multiple clients or client sources. Forward proxy servers are mainly used by companies to manage internet usage of their employees and restrict content. It is also used as a firewall to secure company&rsquo;s network by blocking any request which would pose threat to the companies&rsquo;s network. Proxy servers are also used to bypass geo-restriction and browse content which might be blocked in user&rsquo;s country. It enables users to browse anonymously, as the proxy server masks their details from the website&rsquo;s servers.</p>
-<p><img  class="mx-auto my-4"  src="/img/blog/proxies/forward-proxy.png" alt="image"
+<p><img  class="mx-auto my-4"  src="/img/blog/proxies/forward-proxy.png" alt="Fig 1.2: Forward Proxy Server"
 	>
 
 
 <div class="text-center my-2 font-sans text-md text-grey-800">
-	image
+	Fig 1.2: Forward Proxy Server
 </div>
 </p>
-<p><strong><em>NOTE:</em></strong><br>
-<code>This is not an accurate description rather just an illustration.</code></p>
+<p><strong><em>NOTE:</em></strong>  <strong>This is not an accurate description rather just an illustration.</strong></p>
 <h1 id="reverse-proxy-server">Reverse Proxy Server</h1>
 <p>Reverse proxy servers are implemented on the server side instead of the client side. It sits in front of multiple webservers and manages the incoming requests by forwarding them to the web servers. It provides anonymity for the back-end web servers and not the client. Reverse proxy servers are generally used to perform tasks such as authentication, content caching, and encryption/decryption on behalf of the web server. These tasks would hog CPU cycles on the web server and degrade performance of the website by introducing high amount of delay in loading the webpage. Reverse proxies are also used as load balancers to distribute the incoming traffic efficiently among the web servers but it is not optimized for this task. In essence, reverse proxy server is a gateway to a web-server or group of web-servers.</p>
-<p><img  class="mx-auto my-4"  src="/img/blog/proxies/reverse-proxy.png" alt="image"
+<p><img  class="mx-auto my-4"  src="/img/blog/proxies/reverse-proxy.png" alt="Fig 1.3: Reverse Proxy Server"
 	>
 
 
 <div class="text-center my-2 font-sans text-md text-grey-800">
-	image
+	Fig 1.3: Reverse Proxy Server
 </div>
 </p>
-<p><strong><em>NOTE:</em></strong><br>
-<code>This is not an accurate description rather just an illustration. Red lines represent server's response and black lines represent initial request from client(s).</code></p>
+<p><strong><em>NOTE:</em></strong>  <strong>This is not an accurate description rather just an illustration. Red lines represent server&rsquo;s response and black lines represent initial request from client(s).</strong></p>
 <h1 id="summary">Summary</h1>
 <p>A proxy server acts as a gateway between client (you) and the internet and separates end-users from the websites you browse. The position of the proxy server on the network determines whether it is a forward or a reverse proxy server. Forward proxy is implemented on the client side and sits in front of multiple clients or client sources and forwards requests to the web server. Reverse proxy servers are implemented on the server side it sits in front of multiple webservers and manages the incoming requests by forwarding them to the web servers.</p>
 <p>If all this was too much to take in, I have a simple analogy for you. At a restaurant the waiter/waitress takes your order and gives it to the kitchen head chef. The head chef then calls out the order and assigns tasks to everyone in the kitchen.</p>
@@ -244,10 +241,22 @@
 </div>
 
 
+<hr class="mb-6 mt-24">
+
 
 <div class="flex flex-wrap justify-between items-center">
 	
 
+	
+	<div
+		class=" ml-auto  mt-1 text-center sm:text-right overflow-ellipsis pl-1">
+		<a href="https://jordi-jaspers.github.io/blog/personal-hugo-website/">
+			<span class="underline">Portfolio In Hugo &amp; Github Pages</span>
+		</a>
+		<a class="ml-4 no-underline" href="https://jordi-jaspers.github.io/blog/personal-hugo-website/">
+			<img src="/icons/top_arrow.svg" class="transform rotate-90 inline-block">
+		</a>
+	</div>
 	
 </div>
 

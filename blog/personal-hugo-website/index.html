@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang='en' class=''>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name=viewport content="width=device-width, initial-scale=1">
+
+<meta name="description" content="How do you build a personal website with Github Pages and Hugo?" />
+
+<title>
+	Jordi Jaspers
+	 - Portfolio In Hugo &amp; Github Pages 
+</title>
+
+
+
+<link rel="icon" href="/favicon.png">
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://jordi-jaspers.github.io/js/pico.min.f68158e607f7493b08ceb09d0d24efe0.js" intergrity="md5-9oFY5gf3STsIzrCdDSTv4A==" crossorigin="anonymous"></script>
+
+
+	
+
+
+
+
+
+<link rel="stylesheet" href="https://jordi-jaspers.github.io/css/main.min.2bd3406fa94a147c25f5b55ad43fc388.css" crossorigin="anonymous" media="screen"
+	integrity="md5-K9NAb6lKFHwl9bVa1D/DiA==">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://jordi-jaspers.github.io/css/syntax.min.a381883ed9f1079c185da5f1200cd5a9.css" crossorigin="anonymous"
+	integrity="md5-o4GIPtnxB5wYXaXxIAzVqQ==" media="screen">
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://jordi-jaspers.github.io/style/style.min.d41d8cd98f00b204e9800998ecf8427e.css" crossorigin="anonymous" media="screen"
+	integrity="md5-1B2M2Y8AsgTpgAmY7PhCfg==">
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://jordi-jaspers.github.io/css/main.min.d5d46344e3b621a3e3a173927106f45d.css" crossorigin="anonymous" media="screen"
+	integrity="md5-1dRjROO2IaPjoXOScQb0XQ==">
+
+
+</head>
+
+<body class="min-h-screen bg-secondary-light dark:bg-secondary text-primary relative pb-24">
+	
+	<div id="top" class="dark"></div>
+
+<header class="w-full flex items-center justify-between px-5 mx-auto md:pt-8 md:max-w-5xl pt-5">
+	
+	<div class="flex align-center content-center items-center">
+		<a href="https://jordi-jaspers.github.io/" class="inline-block font-bold no-underline select-none">
+			<h1 class="hidden md:block font-charter tracking-normal m-0">
+				Jordi Jaspers | 
+			</h1>
+
+			<div class="md:hidden">
+				<div class="w-8 h-8 relative font-bold bg-white blend-diff">
+	<h1 class="absolute-center m-0 font-charter text-2xl text-gray-100 blend-diff select-none">
+		J
+	</h1>
+</div>
+			</div>
+		</a>
+
+		
+		<div class="container-icons-outer md:h-8 md:pt-2 md:w-auto" id="dark-mode-btn">
+			<div class="icon-container">
+				<div id="icons" class="flex">
+					<img src="/icons/night.svg" id="night-mode" class="pl-2"></img>
+					<img src="/icons/sun.svg" id="light-mode" class="pl-2"></img>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+
+	<nav class="">
+		
+		<a href="/"
+			class='mx-1 md:mx-2 hover:text-primary-light dark:hover:text-primary-dark no-underline'>
+			 Home
+		</a>
+		
+		<a href="/blog/"
+			class='mx-1 md:mx-2 hover:text-primary-light dark:hover:text-primary-dark no-underline'>
+			 Blog
+		</a>
+		
+		<a href="/#contact"
+			class='mx-1 md:mx-2 hover:text-primary-light dark:hover:text-primary-dark no-underline'>
+			 Contact
+		</a>
+		
+	</nav>
+</header>
+	
+
+	<main class="w-full px-4 pt-8 mx-auto md:max-w-4xl overflow-x-hidden md:overflow-visible ">
+<button onclick="window.history.back()"
+	class="bg-transparent border-none font-bold">&larr;Back</button>
+<h1 class="text-center mx-auto max-w-4xl text-4xl sm:text-5xl md:text-6xl">
+	Portfolio In Hugo &amp; Github Pages
+</h1>
+
+<h2 class="text-center font-serif font-thin mx-auto mb-16 max-w-4xl text-4xl">
+	How do you build a personal website with Github Pages and Hugo?
+</h2>
+
+<div class="text-justify leading-loose mb-12 text-lg">
+	<h2 id="introduction">Introduction:</h2>
+<p>A personal webpage is a perfect place to let the world know about you and showcase your past accomplishments. Put your resume, your projects, your blogs in with a personalized theme which makes people know you have a great taste: all-in-one! It’s your portfolio displayed online, a small yet cool project you can do with not much effort, why not?</p>
+<p>With Github Pages, we can host a personal webpage without bothering about finding a domain name, and with Hugo, we have a variety of themes to choose from. This tutorial uses a Mac OS and will run several command-line in terminal: don’t worry, it’s absolutely a tutorial for starters! Now, let’s start this step-by-step tutorial to set up your personal webpage!</p>
+<ul>
+<li>
+
+
+
+
+<a href="/blog/personal-hugo-website/#Building-The-Site-Locally" 
+	class="underline " >
+	Building The Site Locally
+</a></li>
+<li>
+
+
+
+
+<a href="/blog/personal-hugo-website/#Deploy-To-Github-Pages" 
+	class="underline " >
+	Deploy To Github Pages
+</a></li>
+</ul>
+<h2 id="hugo">HUGO</h2>
+<p>Hugo is one of the most popular open-source static site generators and is written in GO. It’s simple, efficient, easy to scale and fast to deploy. Simply install with brew, clone themes you like from Github or the official website 
+
+
+
+
+<a href="https://gohugo.io/" 
+	class="underline "  target="_blank" rel="noopener"
+	>
+	HUGO
+</a>, make some changes in the configuration file and deploy, then your page will be online.</p>
+<h2 id="github-pages">Github Pages</h2>
+<p>
+
+
+
+
+<a href="https://pages.github.com/" 
+	class="underline "  target="_blank" rel="noopener"
+	>
+	Github Pages
+</a> is a static web hosting service provided by Github, which provides 1GB of free space and provides convenient deployment directly through the Github repository.</p>
+<h2 id="installation">Installation</h2>
+<p>Open your terminal, run the following command:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">brew install hugo
+</code></pre></div><p>Hugo also recommends installing Git, to check if you have it on your computer, run:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git --version
+</code></pre></div><p>If you’ve installed it, it shows your version of git, if not, it will prompt you to install it automatically.</p>
+<h1 id="building-the-site-locally">Building The Site Locally</h1>
+<p>Now let’s build a site locally on your computer first. The first step is to go to the directory where you want to save your website, I want to create my site on my desktop, so run the following command in terminal:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> &lt;Your project folder&gt;
+hugo new site mysite
+</code></pre></div><p>Whenever you <em>&ldquo;ls -a&rdquo;</em> in your folder, the generated files look like the following structure:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">07/13/2021  10:44 PM    &lt;DIR&gt;          .
+07/13/2021  10:44 PM    &lt;DIR&gt;          ..
+07/13/2021  10:44 PM    &lt;DIR&gt;          archetypes
+07/13/2021  10:44 PM                <span class="m">83</span> config.toml
+07/13/2021  10:44 PM    &lt;DIR&gt;          content
+07/13/2021  10:44 PM    &lt;DIR&gt;          data
+07/13/2021  10:44 PM    &lt;DIR&gt;          layouts
+07/13/2021  10:44 PM    &lt;DIR&gt;          static
+               <span class="m">1</span> File<span class="o">(</span>s<span class="o">)</span>             <span class="m">83</span> bytes
+               <span class="m">7</span> Dir<span class="o">(</span>s<span class="o">)</span>   6,273,331,200 bytes free
+</code></pre></div><p>The ones we will work with:</p>
+<ul>
+<li>config.toml : the configuration file, we will need to edit it later.</li>
+<li>content : stores all the content of the website, including all of your blog posts, resumes and so on, can include folders, but usually all .md files.</li>
+<li>static : Stores static files such images, logos, css, js, etc. The files in this directory will be directly copied to the /public folder.</li>
+<li>themes : now it’s empty, but will save the theme of your choice later.</li>
+<li>archetypes : stored .mdtemplate files, it has higher priority than /archetypesfolders under the theme.</li>
+<li>data : stores data files for template calls</li>
+<li>layouts : store .htmltemplates, this folder has higher priority than /layoutsfolders under the theme</li>
+<li>public : After executing the <strong><em>&ldquo;hugo -D&rdquo;</em></strong> command, generates the static files to host your website.</li>
+</ul>
+<p><strong>Choose a theme:</strong></p>
+<p>Pick a theme you like from the official website Hugo themes or from Github. With the following commands you can install the theme to your Hugo project.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> &lt;YOUR PROJECT&gt;
+<span class="nb">cd</span> themes
+git clone &lt;THE GITHUB REPO OF THE THEME&gt;
+</code></pre></div><p>Another simple solution is to download the entire repository and replace the “themes” folder in your project folder. Next, You will have to change the configuration file with the name of your base URL in <em>&ldquo;config.toml&rdquo;</em>.</p>
+<p><strong>baseURL = &ldquo;https://[your github username].github.io/&quot;</strong></p>
+<p>An example configuration is shown below. Note that the picture directories and configuration might vary from theme to theme, make sure to read the instruction of the theme you choose.</p>
+<div class="highlight"><pre class="chroma"><code class="language-toml" data-lang="toml"><span class="c"># Use an empty string if you have multiple domain linking to your website</span>
+<span class="c"># This string is used to generate the absolute URL for your assets.</span>
+<span class="nx">baseURL</span> <span class="p">=</span> <span class="s1">&#39;https://jordi-jaspers.github.io/&#39;</span>
+<span class="nx">defaultContentLanguage</span> <span class="p">=</span> <span class="s1">&#39;en&#39;</span>
+
+<span class="c"># Emoji in markdown files</span>
+<span class="nx">enableEmoji</span> <span class="p">=</span> <span class="kc">true</span>
+<span class="nx">languageCode</span> <span class="p">=</span> <span class="s1">&#39;en-us&#39;</span>
+
+<span class="c"># Number of blog post per page</span>
+<span class="nx">paginate</span> <span class="p">=</span> <span class="mi">10</span>
+<span class="nx">theme</span> <span class="p">=</span> <span class="s1">&#39;pico&#39;</span>
+
+<span class="c"># Title of the website is used for the meta tag title</span>
+<span class="c"># and the square icon (not the favicon)</span>
+<span class="nx">title</span> <span class="p">=</span> <span class="s1">&#39;Jordi Jaspers&#39;</span>
+
+<span class="c"># Path relative to assets folder</span>
+<span class="p">[</span><span class="nx">params</span><span class="p">]</span>
+<span class="nx">customCSS</span> <span class="p">=</span> <span class="p">[</span>
+	<span class="s2">&#34;style/style.css&#34;</span><span class="p">,</span>
+	<span class="s2">&#34;style/theme.sass&#34;</span><span class="p">,</span>
+<span class="p">]</span> 
+
+<span class="c"># Path relative to assets folder</span>
+<span class="nx">customJS</span> <span class="p">=</span> <span class="p">[</span><span class="s2">&#34;js/console.js&#34;</span><span class="p">]</span>
+
+<span class="c"># Homepage description</span>
+<span class="c"># For blog page description you can overwrite it </span>
+<span class="c"># in the front matter</span>
+<span class="nx">description</span> <span class="p">=</span> <span class="s2">&#34;Software Engineer&#34;</span>
+<span class="nx">email</span> <span class="p">=</span> <span class="s2">&#34;JordiJaspers@gmail.com&#34;</span>
+<span class="nx">favicon</span> <span class="p">=</span> <span class="s1">&#39;/favicon.png&#39;</span>
+<span class="nx">pdf</span> <span class="p">=</span> <span class="s2">&#34;/documents/Curriculum_Vitae_JORDI_JASPERS.pdf&#34;</span>
+
+<span class="p">[[</span><span class="nx">params</span><span class="p">.</span><span class="nx">header</span><span class="p">]]</span>
+<span class="nx">night</span> <span class="p">=</span> <span class="s2">&#34;/icons/night.svg&#34;</span>
+<span class="nx">sun</span> <span class="p">=</span> <span class="s2">&#34;/icons/sun.svg&#34;</span>
+
+<span class="c"># Dark mode support</span>
+<span class="c"># Supported value are :</span>
+<span class="c"># - off</span>
+<span class="c"># - always</span>
+<span class="c"># If commented the theme will use the browser theme.</span>
+<span class="c"># darkMode = &#39;always&#39;</span>
+
+<span class="c"># Social parameters for contact_icons widget</span>
+<span class="p">[[</span><span class="nx">params</span><span class="p">.</span><span class="nx">social</span><span class="p">]]</span>
+<span class="nx">alt</span> <span class="p">=</span> <span class="s2">&#34;email icon&#34;</span>
+<span class="nx">icon</span> <span class="p">=</span> <span class="s2">&#34;/icons/email.svg&#34;</span>
+<span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;email&#34;</span>
+<span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;mailto:jordijaspers@gmail.com&#34;</span>
+
+<span class="p">[[</span><span class="nx">params</span><span class="p">.</span><span class="nx">social</span><span class="p">]]</span>
+<span class="nx">alt</span> <span class="p">=</span> <span class="s2">&#34;linkedin icon&#34;</span>
+<span class="nx">blank</span> <span class="p">=</span> <span class="kc">true</span>
+<span class="nx">icon</span> <span class="p">=</span> <span class="s2">&#34;/icons/linkedin.svg&#34;</span>
+<span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;LinkedIn&#34;</span>
+<span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;https://www.linkedin.com/in/jordi-jaspers/&#34;</span>
+
+<span class="p">[[</span><span class="nx">params</span><span class="p">.</span><span class="nx">social</span><span class="p">]]</span>
+<span class="nx">alt</span> <span class="p">=</span> <span class="s2">&#34;github icon&#34;</span>
+<span class="nx">blank</span> <span class="p">=</span> <span class="kc">true</span>
+<span class="nx">icon</span> <span class="p">=</span> <span class="s2">&#34;/icons/github.svg&#34;</span>
+<span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;github&#34;</span>
+<span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;https://github.com/Jordi-Jaspers&#34;</span>
+
+<span class="p">[[</span><span class="nx">params</span><span class="p">.</span><span class="nx">social</span><span class="p">]]</span>
+<span class="nx">alt</span> <span class="p">=</span> <span class="s2">&#34;stack-overflow icon&#34;</span>
+<span class="nx">blank</span> <span class="p">=</span> <span class="kc">true</span>
+<span class="nx">icon</span> <span class="p">=</span> <span class="s2">&#34;/icons/stack-overflow.svg&#34;</span>
+<span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;stack-overflow&#34;</span>
+<span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;https://stackoverflow.com/users/15013016/jjaspers&#34;</span>
+
+<span class="p">[[</span><span class="nx">params</span><span class="p">.</span><span class="nx">social</span><span class="p">]]</span>
+<span class="nx">alt</span> <span class="p">=</span> <span class="s2">&#34;instagram icon&#34;</span>
+<span class="nx">blank</span> <span class="p">=</span> <span class="kc">true</span>
+<span class="nx">icon</span> <span class="p">=</span> <span class="s2">&#34;/icons/instagram.svg&#34;</span>
+<span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;instagram&#34;</span>
+<span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;https://www.instagram.com/jordi_jaspers/&#34;</span>
+
+<span class="c"># Navigation bar</span>
+<span class="p">[</span><span class="nx">menu</span><span class="p">]</span>
+
+<span class="p">[[</span><span class="nx">menu</span><span class="p">.</span><span class="nx">main</span><span class="p">]]</span>
+<span class="nx">identifier</span> <span class="p">=</span> <span class="s2">&#34;home&#34;</span> <span class="c"># identifier is use for translations</span>
+<span class="nx">pre</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span> <span class="c"># pre is inserted before the translation (icons, image, etc)</span>
+<span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;/&#34;</span> 
+<span class="nx">weight</span> <span class="p">=</span> <span class="mi">10</span> 
+
+<span class="p">[[</span><span class="nx">menu</span><span class="p">.</span><span class="nx">main</span><span class="p">]]</span>
+<span class="nx">identifier</span> <span class="p">=</span> <span class="s2">&#34;blog&#34;</span> <span class="c"># identifier is use for translations</span>
+<span class="nx">pre</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span> <span class="c"># pre is inserted before the translation (icons, image, etc)</span>
+<span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;/blog/&#34;</span> 
+<span class="nx">weight</span> <span class="p">=</span> <span class="mi">20</span> 
+
+<span class="p">[[</span><span class="nx">menu</span><span class="p">.</span><span class="nx">main</span><span class="p">]]</span>
+<span class="nx">identifier</span> <span class="p">=</span> <span class="s2">&#34;contact&#34;</span> <span class="c"># identifier is use for translations</span>
+<span class="nx">pre</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span> <span class="c"># pre is inserted before the translation (icons, image, etc)</span>
+<span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;/#contact&#34;</span> 
+<span class="nx">weight</span> <span class="p">=</span> <span class="mi">30</span> 
+
+<span class="c"># Syntax highlightning</span>
+<span class="p">[</span><span class="nx">markup</span><span class="p">.</span><span class="nx">highlight</span><span class="p">]</span>
+<span class="nx">guessSyntax</span> <span class="p">=</span> <span class="kc">false</span> 
+<span class="nx">lineNumbersInTable</span> <span class="p">=</span> <span class="kc">false</span> 
+<span class="nx">noClasses</span> <span class="p">=</span> <span class="kc">false</span> <span class="c"># Set to false to use the Pico default theme.</span>
+<span class="nx">tabWidth</span> <span class="p">=</span> <span class="mi">2</span> 
+
+<span class="p">[</span><span class="nx">taxonomies</span><span class="p">]</span>
+<span class="nx">category</span> <span class="p">=</span> <span class="s2">&#34;categories&#34;</span>
+<span class="nx">tag</span> <span class="p">=</span> <span class="s2">&#34;tags&#34;</span>
+
+<span class="c"># Translation</span>
+<span class="c"># English, French and Italian are supported but you can contribute</span>
+<span class="c"># by adding translation to i18n/ folder.</span>
+<span class="p">[</span><span class="nx">languages</span><span class="p">.</span><span class="nx">en</span><span class="p">]</span>
+<span class="nx">contentDir</span> <span class="p">=</span> <span class="s1">&#39;content/en&#39;</span>
+<span class="nx">languageCode</span> <span class="p">=</span> <span class="s1">&#39;en&#39;</span>
+<span class="nx">languageName</span> <span class="p">=</span> <span class="s1">&#39;English&#39;</span>
+<span class="nx">weight</span> <span class="p">=</span> <span class="mi">0</span>
+</code></pre></div><h2 id="create-your-first-blog">Create your first blog</h2>
+<p>You can create your first markdown file in the content folder by running:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> mysite
+hugo new about.md
+</code></pre></div><p>Or, you can edit the markdown file in your text editor and save it to the content folder. You need to delete the line “draft=true” to make it shown on your site.Content of about.mdwill be available at <strong>http://localhost:1313/about</strong>.</p>
+<h2 id="test-the-site-locally">Test the site locally</h2>
+<p>Running the following command will give you:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> mysite
+hugo server
+</code></pre></div><p>The terminal will show instruction like this:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">Start building sites … 
+hugo v0.85.0+extended darwin/amd64 <span class="nv">BuildDate</span><span class="o">=</span>unknown
+
+                   <span class="p">|</span> EN  
+-------------------+-----
+  Pages            <span class="p">|</span> <span class="m">21</span>  
+  Paginator pages  <span class="p">|</span>  <span class="m">0</span>  
+  Non-page files   <span class="p">|</span>  <span class="m">0</span>  
+  Static files     <span class="p">|</span> <span class="m">55</span>  
+  Processed images <span class="p">|</span>  <span class="m">0</span>  
+  Aliases          <span class="p">|</span>  <span class="m">1</span>  
+  Sitemaps         <span class="p">|</span>  <span class="m">1</span>  
+  Cleaned          <span class="p">|</span>  <span class="m">0</span>  
+
+Built in <span class="m">4981</span> ms
+</code></pre></div><p>Go to http://localhost:1313/ in your web browser and the page is shown.</p>
+<p><img  class="mx-auto my-4"  src="/img/blog/personal_hugo_website/website_preview.png" alt="Fig 1.2: Website Preview"
+	>
+
+
+<div class="text-center my-2 font-sans text-md text-grey-800">
+	Fig 1.2: Website Preview
+</div>
+</p>
+<h1 id="deploy-to-github-pages">Deploy To Github Pages</h1>
+<p><strong>Create your Github Repository</strong>
+In order to publish your site with the link <em>&quot;<!-- raw HTML omitted -->.github.io&rdquo;</em>, you will need to create a repository named <!-- raw HTML omitted -->.github.io. Go to your Github webpage and click on the “New” to create a new repository, contain the fully rendered version of your Hugo website.</p>
+<p><strong>Publish to Github</strong>
+Get the website rendered in the public folder by running the following commands in your terminal. First step is to remove all the cached and committed files of the public folder.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> &lt;YOUR PROJECT FOLDER&gt;
+git rm -r --cached public 
+</code></pre></div><p>When that process finishes you can add the github pages repo to your current repo as a submodule. This means whenever you create a clean build of the project the public folder is automatically pushed to your github page. Then you’ll see a public folder appears in the project folder.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git submodule add -b &lt;BRANCH&gt; &lt;REPO OF GITHUB PAGE&gt; public
+hugo -D
+<span class="nb">cd</span> public
+git add -A
+git commit -m <span class="s2">&#34;Commit message&#34;</span>
+git push
+</code></pre></div><p>Now the site is successfully published! You can also customize your background image and post new blogs later! If you want to learn more about Hugo or Github, you can refer to the official websites:</p>
+<ul>
+<li>
+
+
+
+
+<a href="https://gohugo.io/" 
+	class="underline "  target="_blank" rel="noopener"
+	>
+	HUGO
+</a></li>
+<li>
+
+
+
+
+<a href="https://pages.github.com/" 
+	class="underline "  target="_blank" rel="noopener"
+	>
+	Github Pages
+</a></li>
+</ul>
+
+</div>
+<div>
+	<ul style="list-style-type:none" >
+		<li> Author: Jordi Jaspers </li>
+		<li> Published: 2021-08-01 15:22:26 &#43;0200 CEST </li>
+	</ul>
+</div>
+
+
+<hr class="mb-6 mt-24">
+
+
+<div class="flex flex-wrap justify-between items-center">
+	
+	<div class=" mb-1 text-center sm:text-left overflow-ellipsis pr-1">
+		<a class="mr-4 no-underline" href="https://jordi-jaspers.github.io/blog/proxies/">
+			<img src="/icons/top_arrow.svg" class="transform -rotate-90 inline-block">
+		</a>
+		<a href="https://jordi-jaspers.github.io/blog/proxies/">
+			<span class="underline">Proxy Servers</span>
+		</a>
+	</div>
+	
+
+	
+</div>
+
+<hr class="my-6">
+<div class="flex justify-center items-center flex-wrap">
+	
+	<a href="mailto:jordijaspers@gmail.com" title="email"
+		class="bg-black rounded-full p-3 mx-2 my-2 transform hover:scale-110 active:scale-90 transition-transform duration-300 ease-in-out"
+		 >
+		<img src="/icons/email.svg" alt="email icon" class="w-4 h-4 md:w-6 md:h-6 blend-diff">
+	</a>
+	
+	<a href="https://www.linkedin.com/in/jordi-jaspers/" title="LinkedIn"
+		class="bg-black rounded-full p-3 mx-2 my-2 transform hover:scale-110 active:scale-90 transition-transform duration-300 ease-in-out"
+		 target="_blank"   rel="noopener" >
+		<img src="/icons/linkedin.svg" alt="linkedin icon" class="w-4 h-4 md:w-6 md:h-6 blend-diff">
+	</a>
+	
+	<a href="https://github.com/Jordi-Jaspers" title="github"
+		class="bg-black rounded-full p-3 mx-2 my-2 transform hover:scale-110 active:scale-90 transition-transform duration-300 ease-in-out"
+		 target="_blank"   rel="noopener" >
+		<img src="/icons/github.svg" alt="github icon" class="w-4 h-4 md:w-6 md:h-6 blend-diff">
+	</a>
+	
+	<a href="https://stackoverflow.com/users/15013016/jjaspers" title="stack-overflow"
+		class="bg-black rounded-full p-3 mx-2 my-2 transform hover:scale-110 active:scale-90 transition-transform duration-300 ease-in-out"
+		 target="_blank"   rel="noopener" >
+		<img src="/icons/stack-overflow.svg" alt="stack-overflow icon" class="w-4 h-4 md:w-6 md:h-6 blend-diff">
+	</a>
+	
+	<a href="https://www.instagram.com/jordi_jaspers/" title="instagram"
+		class="bg-black rounded-full p-3 mx-2 my-2 transform hover:scale-110 active:scale-90 transition-transform duration-300 ease-in-out"
+		 target="_blank"   rel="noopener" >
+		<img src="/icons/instagram.svg" alt="instagram icon" class="w-4 h-4 md:w-6 md:h-6 blend-diff">
+	</a>
+	
+</div>
+<div class="mt-6"></div>
+
+
+	</main>
+
+	<div class="absolute bottom-0 w-full"><footer class="w-full h-24 text-center text-xs text-gray-400 bg-black relative">
+	<div class="w-full px-6 md:pt-0 md:mx-auto md:max-w-5xl flex flex-1 space-between items-center absolute-center">
+		<a href="https://jordi-jaspers.github.io/" class="absolute">
+			<div class="w-8 h-8 relative font-bold bg-white blend-diff">
+	<h1 class="absolute-center m-0 font-charter text-2xl text-gray-100 blend-diff select-none">
+		J
+	</h1>
+</div>
+		</a>
+
+		<div class="h-full flex-1">
+			<span class="select-none">
+				<ul class="copyright" style="list-style-type:none;">
+					<li>&copy; Jordi Jaspers. All rights reserved.</li>
+				</ul>
+			</span>
+		</div>
+	</div>
+</footer>
+
+	</div>
+</body>
+
+</html>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBy8mnfMHLTs3iLlfwYoMzhAgJZL-HQTiM&callback=initMap" async defer></script>
+
+<script>
+	let darkMode = localStorage.getItem('darkMode')
+	let darkBtn = document.getElementById("night-mode")
+	let lightBtn = document.getElementById("light-mode")
+
+	function initMap() {
+		let darkMode = localStorage.getItem('darkMode')
+		var location = {lat: 50.851368, lng: 5.690973};
+
+		var id = '9b9ec466401295ad';
+		if (darkMode === "on") {
+			id = 'd492f7b85b90bc1a';
+		}
+		var map = new google.maps.Map(document.getElementById("map"), {
+			zoom: 12,
+			center: location,
+			mapId: id
+		});
+		var marker = new google.maps.Marker({
+			position: location,
+			map: map,
+		});
+	}
+
+	darkBtn.addEventListener('click', () => {
+		setLightMode()
+		initMap()
+	})
+
+	lightBtn.addEventListener('click', () => {
+		setDarkMode()
+		initMap()
+	})
+
+	
+	if (darkMode == null) {
+		localStorage.setItem('darkMode', 'on');
+		document.documentElement.classList.add('dark')
+		document.getElementById("light-mode").style = "visibility:hidden";
+		document.getElementById("night-mode").style = "visibility:visible";
+	} else {
+		setInitialDarkMode(darkMode);
+	}
+
+	function setInitialDarkMode(darkMode) {
+		if (darkMode == 'on') {
+			setDarkMode()
+		}
+		else {
+			setLightMode()
+		}
+	}
+
+	function setDarkMode() {
+		console.log("Turning dark mode 'On'");
+		localStorage.setItem('darkMode', 'on');
+	
+		document.documentElement.classList.add('dark');
+		document.getElementById("light-mode").style = "visibility:hidden";
+		document.getElementById("night-mode").style = "visibility:visible";
+	}
+
+	function setLightMode() {
+		console.log("Turning dark mode 'Off'");
+		localStorage.setItem('darkMode', 'off');
+	
+		document.documentElement.classList.remove('dark');
+		document.getElementById("light-mode").style = "visibility:visible";
+		document.getElementById("night-mode").style = "visibility:hidden";
+	}
+</script>
