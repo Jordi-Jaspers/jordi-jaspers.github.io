@@ -2,9 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://jordi-jaspers.github.io/about/</loc>
-    <lastmod>2021-08-01T15:22:26+02:00</lastmod>
-  </url><url>
     <loc>https://jordi-jaspers.github.io/tags/blogging/</loc>
     <lastmod>2021-08-01T15:22:26+02:00</lastmod>
   </url><url>
@@ -25,6 +22,8 @@
   </url><url>
     <loc>https://jordi-jaspers.github.io/blog/proxies/</loc>
     <lastmod>2021-07-25T17:17:26+02:00</lastmod>
+  </url><url>
+    <loc>https://jordi-jaspers.github.io/about/</loc>
   </url><url>
     <loc>https://jordi-jaspers.github.io/categories/</loc>
   </url>
