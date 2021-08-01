@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang='en' class=''>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name=viewport content="width=device-width, initial-scale=1">
+
+
+
+<meta name="description" content="Software Engineer" />
+
+
+
+<title>
+	Jordi Jaspers
+	 - 404 Page not found 
+</title>
+
+
+
+<link rel="icon" href="/favicon.png">
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://jordi-jaspers.github.io/js/pico.min.f68158e607f7493b08ceb09d0d24efe0.js" intergrity="md5-9oFY5gf3STsIzrCdDSTv4A==" crossorigin="anonymous"></script>
+
+
+	
+
+
+
+
+
+<link rel="stylesheet" href="https://jordi-jaspers.github.io/css/main.min.2693524b1f45daa9e86f805fb5a79dbc.css" crossorigin="anonymous" media="screen"
+	integrity="md5-JpNSSx9F2qnob4BftaedvA==">
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://jordi-jaspers.github.io/style/style.min.d41d8cd98f00b204e9800998ecf8427e.css" crossorigin="anonymous" media="screen"
+	integrity="md5-1B2M2Y8AsgTpgAmY7PhCfg==">
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://jordi-jaspers.github.io/css/main.min.d5d46344e3b621a3e3a173927106f45d.css" crossorigin="anonymous" media="screen"
+	integrity="md5-1dRjROO2IaPjoXOScQb0XQ==">
+
+
+</head>
+
+<body class="min-h-screen bg-secondary-light dark:bg-secondary text-primary relative pb-24">
+	
+	<div id="top" class="dark"></div>
+
+<header class="w-full flex items-center justify-between px-5 mx-auto md:pt-8 md:max-w-5xl pt-5">
+	
+	<div class="flex align-center content-center items-center">
+		<a href="https://jordi-jaspers.github.io/" class="inline-block font-bold no-underline select-none">
+			<h1 class="hidden md:block font-charter tracking-normal m-0">
+				Jordi Jaspers | 
+			</h1>
+
+			<div class="md:hidden">
+				<div class="w-8 h-8 relative font-bold bg-white blend-diff">
+	<h1 class="absolute-center m-0 font-charter text-2xl text-gray-100 blend-diff select-none">
+		J
+	</h1>
+</div>
+			</div>
+		</a>
+
+		
+		<div class="container-icons-outer md:h-8 md:pt-2 md:w-auto" id="dark-mode-btn">
+			<div class="icon-container">
+				<div id="icons" class="flex">
+					<img src="/icons/night.svg" id="night-mode" class="pl-2"></img>
+					<img src="/icons/sun.svg" id="light-mode" class="pl-2"></img>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+
+	<nav class="">
+		
+		<a href="/"
+			class='mx-1 md:mx-2 hover:text-primary-light dark:hover:text-primary-dark no-underline'>
+			 Home
+		</a>
+		
+		<a href="/blog/"
+			class='mx-1 md:mx-2 hover:text-primary-light dark:hover:text-primary-dark no-underline'>
+			 Blog
+		</a>
+		
+		<a href="/#contact"
+			class='mx-1 md:mx-2 hover:text-primary-light dark:hover:text-primary-dark no-underline'>
+			 Contact
+		</a>
+		
+	</nav>
+</header>
+	
+
+	<main class="w-full px-4 pt-8 mx-auto md:max-w-4xl overflow-x-hidden md:overflow-visible ">
+<main id="main">
+	<div>
+		<h1 id="title"><a href="/">Go Home</a></h1>
+	</div>
+</main>
+
+	</main>
+
+	<div class="absolute bottom-0 w-full"><footer class="w-full h-24 text-center text-xs text-gray-400 bg-black relative">
+	<div class="w-full px-6 md:pt-0 md:mx-auto md:max-w-5xl flex flex-1 space-between items-center absolute-center">
+		<a href="https://jordi-jaspers.github.io/" class="absolute">
+			<div class="w-8 h-8 relative font-bold bg-white blend-diff">
+	<h1 class="absolute-center m-0 font-charter text-2xl text-gray-100 blend-diff select-none">
+		J
+	</h1>
+</div>
+		</a>
+
+		<div class="h-full flex-1">
+			<span class="select-none">
+				<ul class="copyright" style="list-style-type:none;">
+					<li>&copy; Jordi Jaspers. All rights reserved.</li>
+				</ul>
+			</span>
+		</div>
+	</div>
+</footer>
+
+	</div>
+</body>
+
+</html>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBy8mnfMHLTs3iLlfwYoMzhAgJZL-HQTiM&callback=initMap" async defer></script>
+
+<script>
+	let darkMode = localStorage.getItem('darkMode')
+	let darkBtn = document.getElementById("night-mode")
+	let lightBtn = document.getElementById("light-mode")
+
+	function initMap() {
+		let darkMode = localStorage.getItem('darkMode')
+		var location = {lat: 50.851368, lng: 5.690973};
+
+		var id = '9b9ec466401295ad';
+		if (darkMode === "on") {
+			id = 'd492f7b85b90bc1a';
+		}
+		var map = new google.maps.Map(document.getElementById("map"), {
+			zoom: 12,
+			center: location,
+			mapId: id
+		});
+		var marker = new google.maps.Marker({
+			position: location,
+			map: map,
+		});
+	}
+
+	darkBtn.addEventListener('click', () => {
+		setLightMode()
+		initMap()
+	})
+
+	lightBtn.addEventListener('click', () => {
+		setDarkMode()
+		initMap()
+	})
+
+	
+	if (darkMode == null) {
+		localStorage.setItem('darkMode', 'on');
+		document.documentElement.classList.add('dark')
+		document.getElementById("light-mode").style = "visibility:hidden";
+		document.getElementById("night-mode").style = "visibility:visible";
+	} else {
+		setInitialDarkMode(darkMode);
+	}
+
+	function setInitialDarkMode(darkMode) {
+		if (darkMode == 'on') {
+			setDarkMode()
+		}
+		else {
+			setLightMode()
+		}
+	}
+
+	function setDarkMode() {
+		console.log("Turning dark mode 'On'");
+		localStorage.setItem('darkMode', 'on');
+	
+		document.documentElement.classList.add('dark');
+		document.getElementById("light-mode").style = "visibility:hidden";
+		document.getElementById("night-mode").style = "visibility:visible";
+	}
+
+	function setLightMode() {
+		console.log("Turning dark mode 'Off'");
+		localStorage.setItem('darkMode', 'off');
+	
+		document.documentElement.classList.remove('dark');
+		document.getElementById("light-mode").style = "visibility:visible";
+		document.getElementById("night-mode").style = "visibility:hidden";
+	}
+</script>

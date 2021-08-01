@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang='en' class=''>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name=viewport content="width=device-width, initial-scale=1">
+
+<meta name="description" content="How do proxy servers work and what are forward and reverse proxies?" />
+
+<title>
+	Jordi Jaspers
+	 - Proxy Servers 
+</title>
+
+
+
+<link rel="icon" href="/favicon.png">
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://jordi-jaspers.github.io/js/pico.min.f68158e607f7493b08ceb09d0d24efe0.js" intergrity="md5-9oFY5gf3STsIzrCdDSTv4A==" crossorigin="anonymous"></script>
+
+
+	
+
+
+
+
+
+<link rel="stylesheet" href="https://jordi-jaspers.github.io/css/main.min.2693524b1f45daa9e86f805fb5a79dbc.css" crossorigin="anonymous" media="screen"
+	integrity="md5-JpNSSx9F2qnob4BftaedvA==">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://jordi-jaspers.github.io/css/syntax.min.a381883ed9f1079c185da5f1200cd5a9.css" crossorigin="anonymous"
+	integrity="md5-o4GIPtnxB5wYXaXxIAzVqQ==" media="screen">
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://jordi-jaspers.github.io/style/style.min.d41d8cd98f00b204e9800998ecf8427e.css" crossorigin="anonymous" media="screen"
+	integrity="md5-1B2M2Y8AsgTpgAmY7PhCfg==">
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://jordi-jaspers.github.io/css/main.min.d5d46344e3b621a3e3a173927106f45d.css" crossorigin="anonymous" media="screen"
+	integrity="md5-1dRjROO2IaPjoXOScQb0XQ==">
+
+
+</head>
+
+<body class="min-h-screen bg-secondary-light dark:bg-secondary text-primary relative pb-24">
+	
+	<div id="top" class="dark"></div>
+
+<header class="w-full flex items-center justify-between px-5 mx-auto md:pt-8 md:max-w-5xl pt-5">
+	
+	<div class="flex align-center content-center items-center">
+		<a href="https://jordi-jaspers.github.io/" class="inline-block font-bold no-underline select-none">
+			<h1 class="hidden md:block font-charter tracking-normal m-0">
+				Jordi Jaspers | 
+			</h1>
+
+			<div class="md:hidden">
+				<div class="w-8 h-8 relative font-bold bg-white blend-diff">
+	<h1 class="absolute-center m-0 font-charter text-2xl text-gray-100 blend-diff select-none">
+		J
+	</h1>
+</div>
+			</div>
+		</a>
+
+		
+		<div class="container-icons-outer md:h-8 md:pt-2 md:w-auto" id="dark-mode-btn">
+			<div class="icon-container">
+				<div id="icons" class="flex">
+					<img src="/icons/night.svg" id="night-mode" class="pl-2"></img>
+					<img src="/icons/sun.svg" id="light-mode" class="pl-2"></img>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+
+	<nav class="">
+		
+		<a href="/"
+			class='mx-1 md:mx-2 hover:text-primary-light dark:hover:text-primary-dark no-underline'>
+			 Home
+		</a>
+		
+		<a href="/blog/"
+			class='mx-1 md:mx-2 hover:text-primary-light dark:hover:text-primary-dark no-underline'>
+			 Blog
+		</a>
+		
+		<a href="/#contact"
+			class='mx-1 md:mx-2 hover:text-primary-light dark:hover:text-primary-dark no-underline'>
+			 Contact
+		</a>
+		
+	</nav>
+</header>
+	
+
+	<main class="w-full px-4 pt-8 mx-auto md:max-w-4xl overflow-x-hidden md:overflow-visible ">
+<button onclick="window.history.back()"
+	class="bg-transparent border-none font-bold">&larr;Back</button>
+<h1 class="text-center mx-auto max-w-4xl text-4xl sm:text-5xl md:text-6xl">
+	Proxy Servers
+</h1>
+
+<h2 class="text-center font-serif font-thin mx-auto mb-16 max-w-4xl text-4xl">
+	How do proxy servers work and what are forward and reverse proxies?
+</h2>
+
+<div class="text-justify leading-loose mb-12 text-lg">
+	<h2 id="introduction">Introduction:</h2>
+<p>Internet has connected people across the world using social media and audio/video calling features along with providing an overabundance of knowledge and tools. All this comes with an inherent danger of security and privacy breaches. In this guide we will talk about <strong>proxies</strong> which play a vital role in mitigating these risks. We will cover the following topics in this guide:</p>
+<ul>
+<li>
+
+
+
+
+<a href="/blog/proxies#Proxy-Server" 
+	class="underline " >
+	Proxy Server
+</a></li>
+<li>
+
+
+
+
+<a href="/blog/proxies#Forward-Proxy-Server" 
+	class="underline " >
+	Forward Proxy Server
+</a></li>
+<li>
+
+
+
+
+<a href="/blog/proxies#Reverse-Proxy-Server" 
+	class="underline " >
+	Reverse Proxy Server
+</a></li>
+<li>
+
+
+
+
+<a href="/blog/proxies#Summary" 
+	class="underline " >
+	Summary
+</a></li>
+</ul>
+<h1 id="proxy-server">Proxy Server</h1>
+<p><strong>Every web request which is sent from the client to a web server goes through some type of proxy server. A proxy server acts as a gateway between client (you) and the internet and separates end-users from the websites you browse.</strong> It replaces the source IP address of the web request with the proxy server&rsquo;s IP address and then forwards it to the web server. The web server is unaware of the client, it only sees the proxy server.</p>
+<p><img  class="mx-auto my-4"  src="/img/blog/proxies/proxy-example.png" alt="image"
+	>
+
+
+<div class="text-center my-2 font-sans text-md text-grey-800">
+	image
+</div>
+</p>
+<p><strong><em>NOTE:</em></strong><br>
+<code>This is not an accurate description rather just an illustration.</code></p>
+<p>Proxy servers serve as a single point of control making it easier to enforce security policies. It also provides caching mechanism which stores the requested web pages on the proxy server to improve performance. If the requested web-page is available in cache memory then instead of forwarding the request to the web-server it will send the cached webpage back to the client. This <strong>saves big companies thousands of dollars</strong> by reducing load on their servers as their website is visited by millions of users every day.</p>
+<h1 id="forward-proxy-server">Forward Proxy Server</h1>
+<p>A forward proxy is generally implemented on the client side and sits in front of multiple clients or client sources. Forward proxy servers are mainly used by companies to manage internet usage of their employees and restrict content. It is also used as a firewall to secure company&rsquo;s network by blocking any request which would pose threat to the companies&rsquo;s network. Proxy servers are also used to bypass geo-restriction and browse content which might be blocked in user&rsquo;s country. It enables users to browse anonymously, as the proxy server masks their details from the website&rsquo;s servers.</p>
+<p><img  class="mx-auto my-4"  src="/img/blog/proxies/forward-proxy.png" alt="image"
+	>
+
+
+<div class="text-center my-2 font-sans text-md text-grey-800">
+	image
+</div>
+</p>
+<p><strong><em>NOTE:</em></strong><br>
+<code>This is not an accurate description rather just an illustration.</code></p>
+<h1 id="reverse-proxy-server">Reverse Proxy Server</h1>
+<p>Reverse proxy servers are implemented on the server side instead of the client side. It sits in front of multiple webservers and manages the incoming requests by forwarding them to the web servers. It provides anonymity for the back-end web servers and not the client. Reverse proxy servers are generally used to perform tasks such as authentication, content caching, and encryption/decryption on behalf of the web server. These tasks would hog CPU cycles on the web server and degrade performance of the website by introducing high amount of delay in loading the webpage. Reverse proxies are also used as load balancers to distribute the incoming traffic efficiently among the web servers but it is not optimized for this task. In essence, reverse proxy server is a gateway to a web-server or group of web-servers.</p>
+<p><img  class="mx-auto my-4"  src="/img/blog/proxies/reverse-proxy.png" alt="image"
+	>
+
+
+<div class="text-center my-2 font-sans text-md text-grey-800">
+	image
+</div>
+</p>
+<p><strong><em>NOTE:</em></strong><br>
+<code>This is not an accurate description rather just an illustration. Red lines represent server's response and black lines represent initial request from client(s).</code></p>
+<h1 id="summary">Summary</h1>
+<p>A proxy server acts as a gateway between client (you) and the internet and separates end-users from the websites you browse. The position of the proxy server on the network determines whether it is a forward or a reverse proxy server. Forward proxy is implemented on the client side and sits in front of multiple clients or client sources and forwards requests to the web server. Reverse proxy servers are implemented on the server side it sits in front of multiple webservers and manages the incoming requests by forwarding them to the web servers.</p>
+<p>If all this was too much to take in, I have a simple analogy for you. At a restaurant the waiter/waitress takes your order and gives it to the kitchen head chef. The head chef then calls out the order and assigns tasks to everyone in the kitchen.</p>
+<p>In this analogy:</p>
+<ul>
+<li>You are the client</li>
+<li>Your order is the web request</li>
+<li>Waiter/Waitress is your forward proxy server</li>
+<li>Kitchen head chef is the reverse proxy server</li>
+<li>Other chefs working in the kitchen are the web servers</li>
+</ul>
+<p>With that said our guide comes to an end. Thank you for reading and feel free to submit any updates to the guide using the links below.</p>
+
+</div>
+<div>
+	<ul style="list-style-type:none" >
+		<li> Author: Jordi Jaspers </li>
+		<li> Published: 2021-07-25 17:17:26 &#43;0200 CEST </li>
+	</ul>
+</div>
+
+
+
+<div class="flex flex-wrap justify-between items-center">
+	
+
+	
+</div>
+
+<hr class="my-6">
+<div class="flex justify-center items-center flex-wrap">
+	
+	<a href="mailto:jordijaspers@gmail.com" title="email"
+		class="bg-black rounded-full p-3 mx-2 my-2 transform hover:scale-110 active:scale-90 transition-transform duration-300 ease-in-out"
+		 >
+		<img src="/icons/email.svg" alt="email icon" class="w-4 h-4 md:w-6 md:h-6 blend-diff">
+	</a>
+	
+	<a href="https://www.linkedin.com/in/jordi-jaspers/" title="LinkedIn"
+		class="bg-black rounded-full p-3 mx-2 my-2 transform hover:scale-110 active:scale-90 transition-transform duration-300 ease-in-out"
+		 target="_blank"   rel="noopener" >
+		<img src="/icons/linkedin.svg" alt="linkedin icon" class="w-4 h-4 md:w-6 md:h-6 blend-diff">
+	</a>
+	
+	<a href="https://github.com/Jordi-Jaspers" title="github"
+		class="bg-black rounded-full p-3 mx-2 my-2 transform hover:scale-110 active:scale-90 transition-transform duration-300 ease-in-out"
+		 target="_blank"   rel="noopener" >
+		<img src="/icons/github.svg" alt="github icon" class="w-4 h-4 md:w-6 md:h-6 blend-diff">
+	</a>
+	
+	<a href="https://stackoverflow.com/users/15013016/jjaspers" title="stack-overflow"
+		class="bg-black rounded-full p-3 mx-2 my-2 transform hover:scale-110 active:scale-90 transition-transform duration-300 ease-in-out"
+		 target="_blank"   rel="noopener" >
+		<img src="/icons/stack-overflow.svg" alt="stack-overflow icon" class="w-4 h-4 md:w-6 md:h-6 blend-diff">
+	</a>
+	
+	<a href="https://www.instagram.com/jordi_jaspers/" title="instagram"
+		class="bg-black rounded-full p-3 mx-2 my-2 transform hover:scale-110 active:scale-90 transition-transform duration-300 ease-in-out"
+		 target="_blank"   rel="noopener" >
+		<img src="/icons/instagram.svg" alt="instagram icon" class="w-4 h-4 md:w-6 md:h-6 blend-diff">
+	</a>
+	
+</div>
+<div class="mt-6"></div>
+
+
+	</main>
+
+	<div class="absolute bottom-0 w-full"><footer class="w-full h-24 text-center text-xs text-gray-400 bg-black relative">
+	<div class="w-full px-6 md:pt-0 md:mx-auto md:max-w-5xl flex flex-1 space-between items-center absolute-center">
+		<a href="https://jordi-jaspers.github.io/" class="absolute">
+			<div class="w-8 h-8 relative font-bold bg-white blend-diff">
+	<h1 class="absolute-center m-0 font-charter text-2xl text-gray-100 blend-diff select-none">
+		J
+	</h1>
+</div>
+		</a>
+
+		<div class="h-full flex-1">
+			<span class="select-none">
+				<ul class="copyright" style="list-style-type:none;">
+					<li>&copy; Jordi Jaspers. All rights reserved.</li>
+				</ul>
+			</span>
+		</div>
+	</div>
+</footer>
+
+	</div>
+</body>
+
+</html>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBy8mnfMHLTs3iLlfwYoMzhAgJZL-HQTiM&callback=initMap" async defer></script>
+
+<script>
+	let darkMode = localStorage.getItem('darkMode')
+	let darkBtn = document.getElementById("night-mode")
+	let lightBtn = document.getElementById("light-mode")
+
+	function initMap() {
+		let darkMode = localStorage.getItem('darkMode')
+		var location = {lat: 50.851368, lng: 5.690973};
+
+		var id = '9b9ec466401295ad';
+		if (darkMode === "on") {
+			id = 'd492f7b85b90bc1a';
+		}
+		var map = new google.maps.Map(document.getElementById("map"), {
+			zoom: 12,
+			center: location,
+			mapId: id
+		});
+		var marker = new google.maps.Marker({
+			position: location,
+			map: map,
+		});
+	}
+
+	darkBtn.addEventListener('click', () => {
+		setLightMode()
+		initMap()
+	})
+
+	lightBtn.addEventListener('click', () => {
+		setDarkMode()
+		initMap()
+	})
+
+	
+	if (darkMode == null) {
+		localStorage.setItem('darkMode', 'on');
+		document.documentElement.classList.add('dark')
+		document.getElementById("light-mode").style = "visibility:hidden";
+		document.getElementById("night-mode").style = "visibility:visible";
+	} else {
+		setInitialDarkMode(darkMode);
+	}
+
+	function setInitialDarkMode(darkMode) {
+		if (darkMode == 'on') {
+			setDarkMode()
+		}
+		else {
+			setLightMode()
+		}
+	}
+
+	function setDarkMode() {
+		console.log("Turning dark mode 'On'");
+		localStorage.setItem('darkMode', 'on');
+	
+		document.documentElement.classList.add('dark');
+		document.getElementById("light-mode").style = "visibility:hidden";
+		document.getElementById("night-mode").style = "visibility:visible";
+	}
+
+	function setLightMode() {
+		console.log("Turning dark mode 'Off'");
+		localStorage.setItem('darkMode', 'off');
+	
+		document.documentElement.classList.remove('dark');
+		document.getElementById("light-mode").style = "visibility:visible";
+		document.getElementById("night-mode").style = "visibility:hidden";
+	}
+</script>
