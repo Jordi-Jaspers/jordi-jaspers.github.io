@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang='en' class=''>
+<html lang='en' class='' 
+xmlns="http://www.w3.org/1999/xhtml"
+xmlns:fb="http://ogp.me/ns/fb#">
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -77,6 +79,7 @@
 	integrity="md5-1dRjROO2IaPjoXOScQb0XQ==">
 
 
+	<meta property="og:image" content="/img/portrait.jpg"/>
 </head>
 
 <body class="min-h-screen bg-secondary-light dark:bg-secondary text-primary relative pb-24">
@@ -172,16 +175,16 @@
 </a> is a static web hosting service provided by Github, which provides 1GB of free space and provides convenient deployment directly through the Github repository.</p>
 <h2 id="installation">Installation</h2>
 <p>Open your terminal, run the following command:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">brew install hugo
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">brew install hugo
 </code></pre></div><p>Hugo also recommends installing Git, to check if you have it on your computer, run:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git --version
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">git --version
 </code></pre></div><p>If you’ve installed it, it shows your version of git, if not, it will prompt you to install it automatically.</p>
 <h1 id="building-the-site-locally">Building The Site Locally</h1>
 <p>Now let’s build a site locally on your computer first. The first step is to go to the directory where you want to save your website, I want to create my site on my desktop, so run the following command in terminal:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> &lt;Your project folder&gt;
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> &lt;Your project folder&gt;
 hugo new site mysite
 </code></pre></div><p>Whenever you <em>&ldquo;ls -a&rdquo;</em> in your folder, the generated files look like the following structure:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">07/13/2021  10:44 PM    &lt;DIR&gt;          .
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">07/13/2021  10:44 PM    &lt;DIR&gt;          .
 07/13/2021  10:44 PM    &lt;DIR&gt;          ..
 07/13/2021  10:44 PM    &lt;DIR&gt;          archetypes
 07/13/2021  10:44 PM                <span class="m">83</span> config.toml
@@ -204,13 +207,13 @@ hugo new site mysite
 </ul>
 <p><strong>Choose a theme:</strong></p>
 <p>Pick a theme you like from the official website Hugo themes or from Github. With the following commands you can install the theme to your Hugo project.</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> &lt;YOUR PROJECT&gt;
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> &lt;YOUR PROJECT&gt;
 <span class="nb">cd</span> themes
 git clone &lt;THE GITHUB REPO OF THE THEME&gt;
 </code></pre></div><p>Another simple solution is to download the entire repository and replace the “themes” folder in your project folder. Next, You will have to change the configuration file with the name of your base URL in <em>&ldquo;config.toml&rdquo;</em>.</p>
 <p><strong>baseURL = &ldquo;https://[your github username].github.io/&quot;</strong></p>
 <p>An example configuration is shown below. Note that the picture directories and configuration might vary from theme to theme, make sure to read the instruction of the theme you choose.</p>
-<div class="highlight"><pre class="chroma"><code class="language-toml" data-lang="toml"><span class="c"># Use an empty string if you have multiple domain linking to your website</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="c"># Use an empty string if you have multiple domain linking to your website</span>
 <span class="c"># This string is used to generate the absolute URL for your assets.</span>
 <span class="nx">baseURL</span> <span class="p">=</span> <span class="s1">&#39;https://jordi-jaspers.github.io/&#39;</span>
 <span class="nx">defaultContentLanguage</span> <span class="p">=</span> <span class="s1">&#39;en&#39;</span>
@@ -333,15 +336,15 @@ git clone &lt;THE GITHUB REPO OF THE THEME&gt;
 <span class="nx">weight</span> <span class="p">=</span> <span class="mi">0</span>
 </code></pre></div><h2 id="create-your-first-blog">Create your first blog</h2>
 <p>You can create your first markdown file in the content folder by running:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> mysite
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> mysite
 hugo new about.md
 </code></pre></div><p>Or, you can edit the markdown file in your text editor and save it to the content folder. You need to delete the line “draft=true” to make it shown on your site.Content of about.mdwill be available at <strong>http://localhost:1313/about</strong>.</p>
 <h2 id="test-the-site-locally">Test the site locally</h2>
 <p>Running the following command will give you:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> mysite
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> mysite
 hugo server
 </code></pre></div><p>The terminal will show instruction like this:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">Start building sites … 
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">Start building sites … 
 hugo v0.85.0+extended darwin/amd64 <span class="nv">BuildDate</span><span class="o">=</span>unknown
 
                    <span class="p">|</span> EN  
@@ -370,10 +373,10 @@ Built in <span class="m">4981</span> ms
 In order to publish your site with the link <em>&quot;<!-- raw HTML omitted -->.github.io&rdquo;</em>, you will need to create a repository named <!-- raw HTML omitted -->.github.io. Go to your Github webpage and click on the “New” to create a new repository, contain the fully rendered version of your Hugo website.</p>
 <p><strong>Publish to Github</strong>
 Get the website rendered in the public folder by running the following commands in your terminal. First step is to remove all the cached and committed files of the public folder.</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> &lt;YOUR PROJECT FOLDER&gt;
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> &lt;YOUR PROJECT FOLDER&gt;
 git rm -r --cached public 
 </code></pre></div><p>When that process finishes you can add the github pages repo to your current repo as a submodule. This means whenever you create a clean build of the project the public folder is automatically pushed to your github page. Then you’ll see a public folder appears in the project folder.</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git submodule add -b &lt;BRANCH&gt; &lt;REPO OF GITHUB PAGE&gt; public
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">git submodule add -b &lt;BRANCH&gt; &lt;REPO OF GITHUB PAGE&gt; public
 hugo -D
 <span class="nb">cd</span> public
 git add -A
